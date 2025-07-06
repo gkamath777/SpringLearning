@@ -15,8 +15,12 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Main.class);
-        String[] beanDefinitionNames =  context.getBeanDefinitionNames();
-        Arrays.stream(beanDefinitionNames).forEach(name -> System.out.println(context.getBeanDefinition(name)));
         context.getBean(Greeter.class).greet();
+
+        /**
+         * Bean Definition Names
+         */
+//        String[] beanDefinitionNames =  context.getBeanDefinitionNames();
+//        Arrays.stream(beanDefinitionNames).forEach(name -> System.out.println(context.getBeanDefinition(name)));
     }
 }
